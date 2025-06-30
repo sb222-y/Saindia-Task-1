@@ -1,155 +1,191 @@
-/* Reset & base */
-* {
+/* Mobile-first Styles */
+body {
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
-}
-body {
-  line-height: 1.6;
   background-color: #f4f4f4;
   color: #333;
 }
 
-/* Header & Navigation */
 header {
-  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  background-color: #2a3d4d;
   color: white;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 10%;
-  background: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  text-align: center;
 }
 
 .logo {
-  font-size: 28px;
+  font-size: 2rem;
   font-weight: bold;
-  color: #00ffcc;
 }
 
 nav ul {
   list-style: none;
-  display: flex;
-  gap: 25px;
-}
-nav ul li a {
-  text-decoration: none;
-  color: white;
-  transition: 0.3s;
-}
-nav ul li a:hover {
-  color: #00ffcc;
+  padding: 0;
 }
 
-/* Hero */
+nav ul li {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
 .hero {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  background-color: #004d6a;
+  color: white;
+  padding: 50px 20px;
   text-align: center;
-  padding: 0 10%;
 }
+
 .hero h1 {
-  font-size: 3rem;
-  margin-bottom: 15px;
+  font-size: 2.5rem;
 }
+
 .hero p {
   font-size: 1.2rem;
-  margin-bottom: 25px;
 }
+
 .btn {
-  background-color: #00ffcc;
-  color: black;
-  padding: 12px 25px;
-  border-radius: 25px;
+  padding: 10px 20px;
+  background-color: #f0a500;
+  color: white;
   text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-}
-.btn:hover {
-  background-color: white;
+  border-radius: 5px;
+  font-size: 1rem;
 }
 
-/* Sections */
-section {
-  padding: 60px 10%;
-  background-color: white;
-}
-h2 {
+.about,
+.services,
+.contact {
+  padding: 40px 20px;
   text-align: center;
-  margin-bottom: 30px;
-  color: #203a43;
 }
 
-/* About */
-.about p {
-  max-width: 800px;
-  margin: auto;
-  text-align: center;
-  font-size: 1.1rem;
+.about h2,
+.services h2,
+.contact h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
 }
 
-/* Services */
-.services {
-  background-color: #f0f8ff;
-}
 .service-boxes {
   display: flex;
-  flex-wrap: wrap;
+  justify-content: space-around;
   gap: 20px;
-  justify-content: center;
 }
+
 .service {
-  background: white;
-  border: 1px solid #ddd;
+  background-color: white;
   padding: 20px;
-  border-radius: 12px;
-  width: 250px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 30%;
   text-align: center;
 }
 
-/* Contact */
+.service h3 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.service p {
+  font-size: 1rem;
+}
+
 .contact form {
-  max-width: 500px;
-  margin: auto;
   display: flex;
   flex-direction: column;
   gap: 15px;
-}
-.contact input, .contact textarea {
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  resize: none;
-}
-.contact button {
-  background-color: #203a43;
-  color: white;
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-.contact button:hover {
-  background-color: #00ff22;
-  color: black;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
-/* Footer */
+.contact input,
+.contact textarea {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.contact button {
+  padding: 10px 20px;
+  background-color: #f0a500;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
 footer {
-  background-color: #203a43;
+  background-color: #2a3d4d;
   color: white;
   text-align: center;
-  padding: 20px;
+  padding: 15px;
+  font-size: 1rem;
+}
+
+/* Media Queries */
+@media (min-width: 600px) {
+  .service-boxes {
+    justify-content: space-between;
+  }
+
+  .service {
+    width: 45%;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .hero p {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  header {
+    padding: 40px;
+  }
+
+  nav ul li {
+    margin: 0 20px;
+  }
+
+  .service-boxes {
+    justify-content: space-between;
+  }
+
+  .service {
+    width: 30%;
+  }
+
+  .hero h1 {
+    font-size: 4rem;
+  }
+
+  .hero p {
+    font-size: 1.8rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .service {
+    width: 23%;
+  }
+
+  .contact form {
+    max-width: 500px;
+  }
+
+  footer {
+    font-size: 1.2rem;
+  }
 }
